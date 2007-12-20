@@ -11,6 +11,7 @@ License:   Artistic
 Group:     Development/Perl
 URL:       http://software.schmorp.de/pkg/EV.html
 SOURCE:    EV-%version.tar.gz
+Buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
 
