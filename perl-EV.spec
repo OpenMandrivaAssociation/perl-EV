@@ -5,7 +5,7 @@
 
 Name:      perl-%pkgname
 Summary:   Wrapper for the libev high-performance event loop library
-Version:   2.01
+Version:   3.42
 Release:   %mkrel 1
 License:   Artistic
 Group:     Development/Perl
