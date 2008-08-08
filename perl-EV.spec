@@ -6,7 +6,7 @@
 Name:      perl-%pkgname
 Summary:   Wrapper for the libev high-performance event loop library
 Version:   3.42
-Release:   %mkrel 1
+Release:   %mkrel 2
 License:   Artistic
 Group:     Development/Perl
 URL:       http://software.schmorp.de/pkg/EV.html
