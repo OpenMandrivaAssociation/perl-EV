@@ -1,16 +1,16 @@
 %define pkgname EV
 %define filelist %{pkgname}-%{version}-filelist
-%define NVR %{pkgname}-%{version}-%{release}
 %define maketest 1
+%define ver 3.6
 
 Name:      perl-%pkgname
 Summary:   Wrapper for the libev high-performance event loop library
-Version:   3.53
+Version:   %perl_convert_version %ver
 Release:   %mkrel 1
 License:   Artistic
 Group:     Development/Perl
 URL:       http://software.schmorp.de/pkg/EV.html
-SOURCE:    http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/EV-%version.tar.gz
+SOURCE:    http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/EV-%ver.tar.gz
 Buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
@@ -23,8 +23,8 @@ operating system APIs such as epoll, kqueue and solaris's ports,
 child/pid watchers and more.
 
 %prep
-%setup -q -n %{pkgname}-%{version} 
-chmod -R u+w %{_builddir}/%{pkgname}-%{version}
+%setup -q -n %{pkgname}-%{ver} 
+chmod -R u+w %{_builddir}/%{pkgname}-%{ver}
 
 %build
 grep -rsl '^#!.*perl' . |
