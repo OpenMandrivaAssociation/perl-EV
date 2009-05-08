@@ -2,7 +2,6 @@
 %define filelist %{pkgname}-%{version}-filelist
 %define maketest 1
 %define ver 3.6
-%define perl_convert_version() %(perl -Mversion -le '$v=version->new(%{1})->normal; $v=~s/^v//; print $v')
 
 Name:      perl-%pkgname
 Summary:   Wrapper for the libev high-performance event loop library
