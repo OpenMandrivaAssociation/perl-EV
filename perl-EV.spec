@@ -1,19 +1,23 @@
-%define pkgname EV
-%define filelist %{pkgname}-%{version}-filelist
-%define maketest 1
-%define ver 3.6
+%define upstream_name    EV
+%define upstream_version 3.7
 
-Name:      perl-%pkgname
-Summary:   Wrapper for the libev high-performance event loop library
-Version:   %perl_convert_version %ver
+%define filelist %{upstream_name}-%{upstream_version}-filelist
+%define maketest 1
+
+Name:      perl-%{upstream_name}
+Version:   %perl_convert_version %{upstream_version}
 Release:   %mkrel 1
+
+Summary:   Wrapper for the libev high-performance event loop library
 License:   Artistic
 Group:     Development/Perl
-URL:       http://software.schmorp.de/pkg/EV.html
-SOURCE:    http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/EV-%ver.tar.gz
-Buildroot: %{_tmppath}/%{name}-%{version}-%(id -u -n)
+Url:       http://software.schmorp.de/pkg/EV.html
+Source0:   http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
+BuildRequires: perl(common::sense)
+Buildroot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 A thin wrapper around libev, a high-performance event loop. Intended
@@ -23,8 +27,8 @@ operating system APIs such as epoll, kqueue and solaris's ports,
 child/pid watchers and more.
 
 %prep
-%setup -q -n %{pkgname}-%{ver} 
-chmod -R u+w %{_builddir}/%{pkgname}-%{ver}
+%setup -q -n %{upstream_name}-%{upstream_version} 
+chmod -R u+w %{_builddir}/%{upstream_name}-%{upstream_version}
 
 %build
 grep -rsl '^#!.*perl' . |
@@ -33,6 +37,7 @@ grep -v '.bak$' |xargs --no-run-if-empty \
 CFLAGS="$RPM_OPT_FLAGS"
 echo | %{__perl} Makefile.PL `%{__perl} -MExtUtils::MakeMaker -e ' print qq|PREFIX=%{buildroot}%{_prefix}| if \$ExtUtils::MakeMaker::VERSION =~ /5\.9[1-6]|6\.0[0-5]/ '` INSTALLDIRS=vendor
 %{__make} 
+
 %check
 %{__make} test
 
