@@ -1,5 +1,5 @@
 %define upstream_name    EV
-%define upstream_version 3.7
+%define upstream_version 3.9
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
