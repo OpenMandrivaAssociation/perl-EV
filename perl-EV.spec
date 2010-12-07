@@ -1,12 +1,12 @@
 %define upstream_name    EV
-%define upstream_version 3.9
+%define upstream_version 4.01
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
 
 Name:      perl-%{upstream_name}
 Version:   %perl_convert_version %{upstream_version}
-Release:   %mkrel 2
+Release:   %mkrel 1
 
 Summary:   Wrapper for the libev high-performance event loop library
 License:   Artistic
