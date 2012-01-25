@@ -6,7 +6,7 @@
 
 Name:      perl-%{upstream_name}
 Version:   %perl_convert_version %{upstream_version}
-Release:   %mkrel 1
+Release:	2
 
 Summary:   Wrapper for the libev high-performance event loop library
 License:   Artistic
