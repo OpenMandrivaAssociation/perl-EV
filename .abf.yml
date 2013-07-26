@@ -1,2 +1,4 @@
+removed_sources:
+  EV-4.01.tar.gz: a54ee26c79559e830df7c43ef3985adb4c43943e
 sources:
-  "EV-4.01.tar.gz": a54ee26c79559e830df7c43ef3985adb4c43943e
+  EV-4.15.tar.gz: 87783633d9d93a44ec752ed90490c653a21b4a06

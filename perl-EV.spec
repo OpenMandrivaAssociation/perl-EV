@@ -1,18 +1,18 @@
 %define upstream_name    EV
-%define upstream_version 4.01
+%define upstream_version 4.15
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
 
 Name:      perl-%{upstream_name}
-Version:   %perl_convert_version %{upstream_version}
-Release:	2
+Version:   %perl_convert_version 4.15
+Release:	1
 
 Summary:   Wrapper for the libev high-performance event loop library
 License:   Artistic
 Group:     Development/Perl
 Url:       http://software.schmorp.de/pkg/EV.html
-Source0:   http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:   http://www.cpan.org/authors/id/M/ML/MLEHMANN/EV-4.15.tar.gz
 
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
@@ -143,3 +143,4 @@ find %{buildroot}%{_prefix}             \
 
 * Mon Nov 26 2007 Götz Waschk <waschk@mandriva.org> 1.3-1mdv2008.1
 - initial package
+
