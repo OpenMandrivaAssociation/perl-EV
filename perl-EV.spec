@@ -14,6 +14,7 @@ License:   Artistic
 Group:     Development/Perl
 Url:       http://software.schmorp.de/pkg/EV.html
 Source0:   http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Source100: %{name}.rpmlintrc
 
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
