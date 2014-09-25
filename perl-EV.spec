@@ -1,5 +1,5 @@
 %define upstream_name    EV
-%define upstream_version 4.17
+%define upstream_version 4.18
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
@@ -13,7 +13,7 @@ Summary:   Wrapper for the libev high-performance event loop library
 License:   Artistic
 Group:     Development/Perl
 Url:       http://software.schmorp.de/pkg/EV.html
-Source0:   http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:   http://www.cpan.org/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
 Source100: %{name}.rpmlintrc
 
 BuildRequires: perl-devel
@@ -68,7 +68,3 @@ find %{buildroot}%{_prefix}             \
 %{perl_vendorarch}/EV
 %{perl_vendorarch}/auto/EV
 %{_mandir}/man3/EV*
-
-
-
-
