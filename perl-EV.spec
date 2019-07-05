@@ -1,19 +1,19 @@
 %define upstream_name    EV
-%define upstream_version 4.18
+%define upstream_version 4.27
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
 
 Name:      perl-%{upstream_name}
 Version:   %perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:   Wrapper for the libev high-performance event loop library
 
 License:   Artistic
 Group:     Development/Perl
-Url:       http://software.schmorp.de/pkg/EV.html
-Source0:   http://www.cpan.org/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Url:       https://metacpan.org/pod/EV
+Source0:   https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
 Source100: %{name}.rpmlintrc
 
 BuildRequires: perl-devel
