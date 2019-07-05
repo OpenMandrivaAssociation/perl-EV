@@ -19,6 +19,8 @@ Source100: %{name}.rpmlintrc
 BuildRequires: perl-devel
 BuildRequires: perl-AnyEvent >= 1:2.6
 BuildRequires: perl(common::sense)
+# for test
+BuildRequires: perl(Canary::Stability)
 
 %description
 A thin wrapper around libev, a high-performance event loop. Intended
