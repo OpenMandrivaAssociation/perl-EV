@@ -1,15 +1,15 @@
+%define debug_package %{nil}
+
 %define upstream_name    EV
 %define upstream_version 4.33
 
 %define filelist %{upstream_name}-%{upstream_version}-filelist
 %define maketest 1
 
+Summary:	Wrapper for the libev high-performance event loop library
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
 Release:	1
-
-Summary:	Wrapper for the libev high-performance event loop library
-
 License: 	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/EV
@@ -56,7 +56,7 @@ echo | %{__perl} Makefile.PL `%{__perl} -MExtUtils::MakeMaker -e ' print qq|PREF
 %install
 [ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
-%make_install `%{__perl} -MExtUtils::MakeMaker -e ' print \$ExtUtils::MakeMaker::VERSION <= 6.05 ? qq|PREFIX=%{buildroot}%{_prefix}| : qq|DESTDIR=%{buildroot}| '`
+%make_install `perl -MExtUtils::MakeMaker -e ' print \$ExtUtils::MakeMaker::VERSION <= 6.05 ? qq|PREFIX=%{buildroot}%{_prefix}| : qq|DESTDIR=%{buildroot}| '`
 
 # remove special files
 find %{buildroot} -name "perllocal.pod" \
