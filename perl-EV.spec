@@ -1,3 +1,6 @@
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
 %define module EV
 
 Summary:	Wrapper for the libev high-performance event loop library
