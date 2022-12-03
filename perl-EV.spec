@@ -1,19 +1,13 @@
-%define debug_package %{nil}
-
-%define upstream_name    EV
-%define upstream_version 4.33
-
-%define filelist %{upstream_name}-%{upstream_version}-filelist
-%define maketest 1
+%define module EV
 
 Summary:	Wrapper for the libev high-performance event loop library
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
+Name:		perl-%{module}
+Version:	4.33
 Release:	1
 License: 	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/EV
-Source0:	https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/EV/EV-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 
 BuildRequires:	perl-devel
@@ -39,8 +33,8 @@ child/pid watchers and more.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{upstream_name}-%{upstream_version} 
-chmod -R u+w %{_builddir}/%{upstream_name}-%{upstream_version}
+%autosetup -p1 -n %{module}-%{version}
+#chmod -R u+w %{_builddir}/%{module}-%{version}
 
 %build
 grep -rsl '^#!.*perl' . |
