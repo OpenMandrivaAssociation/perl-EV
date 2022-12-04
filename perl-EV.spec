@@ -14,7 +14,7 @@ Source0:	http://www.cpan.org/modules/by-module/EV/EV-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 
 BuildRequires:	perl-devel
-BuildRequires:	perl-AnyEvent >= 1:2.6
+BuildRequires:	perl-AnyEvent
 BuildRequires:	perl(common::sense)
 # for test
 BuildRequires:	perl(Canary::Stability)
