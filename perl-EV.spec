@@ -1,16 +1,14 @@
-# Work around incomplete debug packages
-%global _empty_manifest_terminate_build 0
-
+%undefine _debugsource_packages
 %define module EV
 
 Summary:	Wrapper for the libev high-performance event loop library
 Name:		perl-%{module}
-Version:	4.33
+Version:	4.34
 Release:	1
 License: 	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/EV
-Source0:	http://www.cpan.org/modules/by-module/EV/EV-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/EV-%{version}.tar.gz
 Source100:	%{name}.rpmlintrc
 
 BuildRequires:	perl-devel
@@ -65,8 +63,3 @@ find %{buildroot} -name "perllocal.pod" \
 find %{buildroot}%{_prefix}             \
     -type d -depth                      \
     -exec rmdir {} \; 2>/dev/null
-
-
-%clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
-
