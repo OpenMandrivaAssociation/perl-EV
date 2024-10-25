@@ -4,7 +4,7 @@
 Summary:	Wrapper for the libev high-performance event loop library
 Name:		perl-%{module}
 Version:	4.34
-Release:	1
+Release:	2
 License: 	Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/EV
